@@ -23,11 +23,11 @@ namespace ColorObjectColorizerExample {
             // Create and customize a bar series.
             Series barSeries = new Series() {
                 DataSource = LoadData(filepath),
-                Colorizer = new ColorObjectColorizer(),
                 ArgumentDataMember = "Country",
                 ColorDataMember = "NationalColor",
                 View = new SideBySideBarSeriesView()
             };
+            barSeries.View.Colorizer = new ColorObjectColorizer();
             barSeries.ValueDataMembers.AddRange(new string[] { "Product" });
             #endregion #BarSeries
 
